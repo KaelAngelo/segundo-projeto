@@ -1,0 +1,40 @@
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar bg-light p-3" 
+         [ngClass]="{'d-none': !isSidebarOpen && isSmallScreen}" 
+         style="width: 250px; height: 100vh; position: fixed; transition: transform 0.3s ease-in-out;">
+      <h5 class="mb-4 d-flex justify-content-between">
+        Menu 
+        <!-- Toggle Button for Small Screens -->
+        <button class="btn btn-outline-secondary d-md-none" (click)="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </h5>
+      <ul class="list-unstyled">
+        <li class="mb-3">
+          <a class="text-decoration-none" href="#">Dashboard</a>
+        </li>
+        <li class="mb-3">
+          <a class="text-decoration-none" href="#">Profile</a>
+        </li>
+        <li class="mb-3">
+          <a class="text-decoration-none" href="#">Settings</a>
+        </li>
+        <li class="mb-3">
+          <a class="text-decoration-none" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Main Content -->
+    <div [ngStyle]="{'margin-left': isSidebarOpen ? '250px' : '0'}" 
+         class="main-content p-4" style="transition: margin 0.3s ease-in-out;">
+      <!-- Toggle Button -->
+      <button class="btn btn-outline-primary mb-3 d-md-none" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i> Menu
+      </button>
+      <h2>Welcome to the App!</h2>
+      <p>This is the main content area.</p>
+    </div>
+  </div>
+  
